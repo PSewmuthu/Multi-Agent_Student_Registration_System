@@ -23,7 +23,7 @@ class StudentRegistrationAgent:
                 break
             else:
                 print(
-                    "\nStudent Registration Agent: Please enter your name and student ID correctly. (Name, ID)")
+                    "Student Registration Agent: Please enter your name and student ID correctly. (Name, ID)")
 
         self.name = inpts[0]
         self.id = inpts[1]
@@ -32,7 +32,7 @@ class StudentRegistrationAgent:
 
     def registration(self):
         print(
-            f"\nStudent Registration Agent: Welcome, {self.name} (ID: {self.id}). Proceeding to course selection.\n\n")
+            f"Student Registration Agent: Welcome, {self.name} (ID: {self.id}). Proceeding to course selection.\n\n")
 
     def finalize(self):
         '''
@@ -79,7 +79,8 @@ class CourseSelectionAgent:
         selected = []
 
         while True:
-            selected = [subject.strip().lower() for subject in input("")]
+            selected = [subject.strip().lower()
+                                      for subject in input("Student: ")]
 
             if selected == []:
                 print("Course Selection Agent: Please select at least one course.")
@@ -104,7 +105,7 @@ class CourseSelectionAgent:
             courses = ', '.join(availables[:-1]) + ', and ' + availables[-1]
 
         print(
-            f"Course Selection Agent: You have selected {courses}. The total cost is ${total}.")
+            f"Course Selection Agent: You have selected {courses}. The total cost is ${total}.\n\n")
 
 
 class PaymentAgent:
@@ -114,7 +115,7 @@ class PaymentAgent:
         Student: 700
         '''
 
-        print("\n\nPayment Agent: Please enter your payment amount.\n")
+        print("Payment Agent: Please enter your payment amount.")
         val = 0
 
         while True:
@@ -123,9 +124,9 @@ class PaymentAgent:
                    if val > 0:
                         break
                     else:
-                        print("\nPayment Agent: Please enter a valid amount.\n")
+                        print("Payment Agent: Please enter a valid amount.")
             except:
-                print("\nPayment Agent: Please enter a valid amount.\n")
+                print("Payment Agent: Please enter a valid amount.")
         
         self.pay(val)
     
@@ -134,4 +135,4 @@ class PaymentAgent:
         Payment Agent: Payment of $700 received. Your registration is confirmed.
         '''
         
-        print(f"\nPayment Agent: Payment of ${amount} received. Your registration is confirmed.")
+        print(f"Payment Agent: Payment of ${amount} received. Your registration is confirmed.")
