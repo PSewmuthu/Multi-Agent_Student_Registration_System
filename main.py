@@ -25,11 +25,22 @@ class StudentRegistrationAgent:
                 print(
                     "\nStudent Registration Agent: Please enter your name and student ID correctly. (Name, ID)")
 
-        self.registration(inpts[0], inpts[1])
+        self.name = inpts[0]
+        self.id = inpts[1]
 
-    def registration(self, name, id):
+        self.registration()
+
+    def registration(self):
         print(
-            f"\nStudent Registration Agent: Welcome, {name} (ID: {id}). Proceeding to course selection.\n\n")
+            f"\nStudent Registration Agent: Welcome, {self.name} (ID: {self.id}). Proceeding to course selection.\n\n")
+
+    def finalize(self):
+        '''
+        Student Registration Agent: Your registration is complete. Thank you for registering, John Doe!
+        '''
+
+        print(
+            f"\n\nStudent Registration Agent: Your registration is complete. Thank you for registering, {self.name}!\n")
 
 
 class CourseSelectionAgent:
