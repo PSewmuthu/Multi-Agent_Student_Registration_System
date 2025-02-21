@@ -80,7 +80,7 @@ class CourseSelectionAgent:
 
         while True:
             selected = [subject.strip().lower()
-                        for subject in input("Student: ")]
+                        for subject in input("Student: ").split(',')]
 
             if selected == []:
                 print("Course Selection Agent: Please select at least one course.")
