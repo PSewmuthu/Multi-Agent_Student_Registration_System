@@ -41,6 +41,7 @@ class CourseSelectionAgent:
         }
 
         self.show_menu()
+        self.confirm()
 
     def show_menu(self):
         '''
@@ -57,3 +58,39 @@ class CourseSelectionAgent:
             print(f"{ind}. {name}\t - \t${price}")
 
         print("Please type the courses you want to register for (separate by commas).")
+
+    def confirm(self):
+        '''
+        Student: Data Structures, Machine Learning 
+        Course Selection Agent: You have selected Data Structures and Machine Learning. The total cost is $700.
+        '''
+
+        selected = []
+
+        while True:
+            selected = [subject.strip().lower() for subject in input("")]
+
+            if selected == []:
+                print("Course Selection Agent: Please select at least one course.")
+            else:
+                break
+
+        availables = []
+        total = 0
+
+        for subject in self.courses:
+            if subject.lower() in selected:
+                availables.append(subject)
+                total += self.courses[subject]
+
+        courses = ''
+
+        if availables == []:
+            print("Course Selection Agent: All you entered courses are not available.")
+        elif len(availables) == 1:
+            courses = availables[0]
+        else:
+            courses = ', '.join(availables[:-1]) + ', and ' + availables[-1]
+
+        print(
+            f"Course Selection Agent: You have selected {courses}. The total cost is ${total}.")
