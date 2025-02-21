@@ -8,8 +8,8 @@ https://github.com/PSewmuthu/Multi-Agent_Student_Registration_System.git
 class StudentRegistrationAgent:
     def __init__(self):
         '''
-        Student Registration Agent: Please enter your name and student ID. 
-        Student: John Doe, 12345 
+        Student Registration Agent: Please enter your name and student ID.
+        Student: John Doe, 12345
         Student Registration Agent: Welcome, John Doe (ID: 12345). Proceeding to course selection.
         '''
 
@@ -45,10 +45,10 @@ class CourseSelectionAgent:
 
     def show_menu(self):
         '''
-        Course Selection Agent: Available courses are: 
-        1. Data Structures - $300 
-        2. Algorithms - $350 
-        3. Machine Learning - $400 
+        Course Selection Agent: Available courses are:
+        1. Data Structures - $300
+        2. Algorithms - $350
+        3. Machine Learning - $400
         Please type the courses you want to register for (separate by commas).
         '''
 
@@ -61,7 +61,7 @@ class CourseSelectionAgent:
 
     def confirm(self):
         '''
-        Student: Data Structures, Machine Learning 
+        Student: Data Structures, Machine Learning
         Course Selection Agent: You have selected Data Structures and Machine Learning. The total cost is $700.
         '''
 
@@ -94,3 +94,24 @@ class CourseSelectionAgent:
 
         print(
             f"Course Selection Agent: You have selected {courses}. The total cost is ${total}.")
+
+
+class PaymentAgent:
+    def __init__(self):
+        '''
+        Payment Agent: Please enter your payment amount.
+        Student: 700
+        '''
+
+        print("\n\nPayment Agent: Please enter your payment amount.\n")
+        val = 0
+
+        while True:
+            try:
+                val = int(input("Student: "))
+                   if val > 0:
+                        break
+                    else:
+                        print("\nPayment Agent: Please enter a valid amount.\n")
+            except:
+                print("\nPayment Agent: Please enter a valid amount.\n")
