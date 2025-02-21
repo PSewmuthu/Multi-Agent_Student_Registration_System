@@ -145,7 +145,7 @@ if __name__ == "__main__":
     '''
 
     while True:
-        prompt = input("Agent: What do you want to do?\nStudent: ")
+        prompt = input("\nAgent: What do you want to do?\nStudent: ")
 
         if 'register' in prompt.lower():
             break
