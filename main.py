@@ -115,3 +115,12 @@ class PaymentAgent:
                         print("\nPayment Agent: Please enter a valid amount.\n")
             except:
                 print("\nPayment Agent: Please enter a valid amount.\n")
+        
+        self.pay(val)
+    
+    def pay(self,amount):
+        '''
+        Payment Agent: Payment of $700 received. Your registration is confirmed.
+        '''
+        
+        print(f"\nPayment Agent: Payment of ${amount} received. Your registration is confirmed.")
