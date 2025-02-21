@@ -80,7 +80,7 @@ class CourseSelectionAgent:
 
         while True:
             selected = [subject.strip().lower()
-                                      for subject in input("Student: ")]
+                        for subject in input("Student: ")]
 
             if selected == []:
                 print("Course Selection Agent: Please select at least one course.")
@@ -121,18 +121,41 @@ class PaymentAgent:
         while True:
             try:
                 val = int(input("Student: "))
-                   if val > 0:
-                        break
-                    else:
-                        print("Payment Agent: Please enter a valid amount.")
+                if val > 0:
+                    break
+                else:
+                    print("Payment Agent: Please enter a valid amount.")
             except:
                 print("Payment Agent: Please enter a valid amount.")
-        
+
         self.pay(val)
-    
-    def pay(self,amount):
+
+    def pay(self, amount):
         '''
         Payment Agent: Payment of $700 received. Your registration is confirmed.
         '''
-        
-        print(f"Payment Agent: Payment of ${amount} received. Your registration is confirmed.")
+
+        print(
+            f"Payment Agent: Payment of ${amount} received. Your registration is confirmed.")
+
+
+if __name__ == "__main__":
+    '''
+    Student: I want to register for courses. 
+    '''
+
+    while True:
+        prompt = input("Agent: What do you want to do?\nStudent: ")
+
+        if 'register' in prompt.lower():
+            break
+        else:
+            print("Agent: The request you entered cannot understand. Please try again.")
+
+    print()
+
+    reg_agent = StudentRegistrationAgent()
+    sel_agent = CourseSelectionAgent()
+    pay_agent = PaymentAgent()
+
+    reg_agent.finalize()
