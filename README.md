@@ -62,6 +62,8 @@ Payment Agent: Payment of $700 received. Your registration is confirmed.
 Student Registration Agent: Your registration is complete. Thank you for registering, John Doe!
 ```
 
+<img src="Screenshots/Screenshot 2025-02-21 214022.png">
+
 ## 🤝 Contributions
 
 Contributions are welcome! Feel free to fork the repository and submit pull requests.
