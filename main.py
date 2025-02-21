@@ -40,6 +40,8 @@ class CourseSelectionAgent:
             'Machine Learning': 400
         }
 
+        self.show_menu()
+
     def show_menu(self):
         '''
         Course Selection Agent: Available courses are: 
